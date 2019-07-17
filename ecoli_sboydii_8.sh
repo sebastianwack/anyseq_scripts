@@ -1,6 +1,6 @@
 #!/bin/bash -l
 #
-#PBS -l nodes=8:ppn=40,walltime=03:48:00
+#PBS -l nodes=8:ppn=40,walltime=01:50:00
 #
 # job name
 #PBS -N ecoli_sboydii_8
