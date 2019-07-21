@@ -1,12 +1,12 @@
 #!/bin/bash -l
 #
-#PBS -l nodes=1:ppn=40,walltime=07:30:00
+#PBS -l nodes=24:ppn=40,walltime=00:53:00
 #
 # job name
-#PBS -N ecoli_sboydii_1
+#PBS -N ecoli_sboydii_24
 #
 # stdout and stderr files
-#PBS -o ecoli_sboydii_1.out -e ecoli_sboydii_1.err
+#PBS -o ecoli_sboydii_24.out -e ecoli_sboydii_24.err
 #PBS -M uni@sebastianwack.de -m abe
 # first non-empty non-comment line ends PBS options
 
