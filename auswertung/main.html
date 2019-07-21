@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>AnySeq Results</title>
+    <link href="css/app.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">AnySeq results</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+    </header>
+
+    <br>
+    <main role="main" class="container">
+        <h1 class="mt-5">Results</h1>
+        <div id="graph_ecoli_sboydii" style="height: 600px;"></div>
+        <br>
+        <div id="graph_test3" style="height: 600px;"></div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+    <!-- optional -->
+    <script src="http://code.highcharts.com/modules/offline-exporting.js"></script>
+    <script src="http://code.highcharts.com/modules/export-data.js"></script>
+    <script type="text/javascript">
+
+    Highcharts.chart('graph_ecoli_sboydii', {
+        title: {
+            text: 'Average runtime'
+        },
+
+        subtitle: {
+            text: 'ecoli.fna vs sboydii.fna, result=5208664'
+        },
+
+        yAxis: {
+            title: {
+                text: 'runtime in seconds (lower is better)'
+            }
+        },
+        xAxis: {
+            title: {
+                text: 'number of nodes'
+            },
+            categories: [1,2,4,8,16,24,32,48,64]
+        },
+        legend: {
+            align: 'center',
+            verticalAlign: 'bottom',
+            x: 0,
+            y: 0
+        },
+        series: [{
+            name: 'BLOCK_WIDTH=BLOCK_HEIGHT=1024',
+            data: [23046, 17513, 11053, 6219, 3373, 3003, 1745, 2763, 2060],
+            color: Highcharts.getOptions().colors[4]
+        }, {
+            name: 'BLOCK_WIDTH=BLOCK_HEIGHT=256',
+            data: [0, 17458, 10661, 5765, 3309, 2488, 1754, 1718, 1096],
+            color: Highcharts.getOptions().colors[5]
+        }],
+
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
+
+    });
+
+    Highcharts.chart('graph_test3', {
+        title: {
+            text: 'Average runtime'
+        },
+
+        subtitle: {
+            text: 'test3a.fna vs test3b.fna (subgenomes of ecoli and sboydii), result=538987'
+        },
+
+        yAxis: {
+            title: {
+                text: 'runtime in seconds (lower is better)'
+            }
+        },
+        xAxis: {
+            title: {
+                text: 'number of nodes'
+            },
+            categories: [1,2,4,8,16,24,32,48,64]
+        },
+        legend: {
+            align: 'center',
+            verticalAlign: 'bottom',
+            x: 0,
+            y: 0
+        },
+        series: [{
+            name: 'BLOCK_WIDTH=BLOCK_HEIGHT=1024',
+            data: [225.012, 212.502, 200.630, 115.493, 73.253, 171.116, 132.665, 90.339, 72.043],
+            color: Highcharts.getOptions().colors[4]
+        }, {
+            name: 'BLOCK_WIDTH=BLOCK_HEIGHT=256',
+            data: [184.961, 152.597, 110.507, 90.090, 80.003],
+            color: Highcharts.getOptions().colors[5],
+        }],
+
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
+
+    });
+    </script>
+  </body>
+</html>
