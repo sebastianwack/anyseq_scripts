@@ -1,12 +1,12 @@
 #!/bin/bash -l
 #
-#PBS -l nodes=2:ppn=40,walltime=05:10:00
+#PBS -l nodes=32:ppn=40,walltime=1:00:00
 #
 # job name
-#PBS -N ecoli_sboydii_2
+#PBS -N test5_32
 #
 # stdout and stderr files
-#PBS -o ecoli_sboydii_2.out -e ecoli_sboydii_2.err
+#PBS -o test5_32.out -e test5_32.err
 # first non-empty non-comment line ends PBS options
 
 echo '*************************************************'
@@ -21,7 +21,7 @@ cd anyseq/build_cpu
 for i in `seq 1 1`;
 do
 	echo 'START>>'
-	mpirun -npernode 1 ./align -i ../sequences/ecoli.fna ../sequences/sboydii.fna
+	mpirun -npernode 1 ./align -i ../../anyseq_input_files/test5a.fna ../../anyseq_input_files/test5b.fna
 	echo '<<END'
 	sleep 3s
 done

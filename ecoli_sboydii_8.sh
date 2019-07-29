@@ -7,7 +7,6 @@
 #
 # stdout and stderr files
 #PBS -o ecoli_sboydii_8.out -e ecoli_sboydii_8.err
-#PBS -M uni@sebastianwack.de -m abe
 # first non-empty non-comment line ends PBS options
 
 echo '*************************************************'

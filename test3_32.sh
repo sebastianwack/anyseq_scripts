@@ -7,7 +7,6 @@
 #
 # stdout and stderr files
 #PBS -o test3_32.out -e test3_32.err
-#PBS -M uni@sebastianwack.de -m abe
 # first non-empty non-comment line ends PBS options
 
 echo '*************************************************'
