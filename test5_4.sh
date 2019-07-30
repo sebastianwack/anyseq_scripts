@@ -1,6 +1,6 @@
 #!/bin/bash -l
 #
-#PBS -l nodes=4:ppn=40,walltime=5:15:00
+#PBS -l nodes=4:ppn=40,walltime=7:40:00
 #
 # job name
 #PBS -N test5_4
