@@ -27,6 +27,8 @@
         <h1 class="mt-5">Results</h1>
         <div id="graph_ecoli_sboydii" style="height: 600px;"></div>
         <br>
+        <div id="graph_test5" style="height: 600px;"></div>
+        <br>
         <div id="graph_test3" style="height: 600px;"></div>
     </main>
 
@@ -126,6 +128,55 @@
         }, {
             name: 'BLOCK_WIDTH=BLOCK_HEIGHT=256',
             data: [184.961, 152.597, 110.507, 90.096, 80.099, 169.906, 129.545, 90.084, 72.029],
+            color: Highcharts.getOptions().colors[5],
+        }],
+
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
+
+    });
+
+    Highcharts.chart('graph_test5', {
+        title: {
+            text: 'Average runtime'
+        },
+
+        subtitle: {
+            text: 'test5a.fna vs test5b.fna (random genomes of length 6937926 and 7325717'
+        },
+
+        yAxis: {
+            title: {
+                text: 'runtime in seconds (lower is better)'
+            }
+        },
+        xAxis: {
+            title: {
+                text: 'number of nodes'
+            },
+            categories: [1,2,4,8,16,24,32,48,64]
+        },
+        legend: {
+            align: 'center',
+            verticalAlign: 'bottom',
+            x: 0,
+            y: 0
+        },
+        series: [{
+            name: 'BLOCK_WIDTH=BLOCK_HEIGHT=256',
+            data: [0,0, 24890.853, 13610.392, 7575.842, 5210.536, 3948.535, 2901.108, 2406.624],
             color: Highcharts.getOptions().colors[5],
         }],
 
